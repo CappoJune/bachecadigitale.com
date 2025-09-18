@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bacheca Digitale - Blog Collaborativo</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bacheca Digitale</h1>
+        <p>Condividi le tue strategie su social media e esperimenti offline</p>
+        <nav>
+            <a href="index.html">Bacheca</a>
+            <a href="playbook.html">Playbook</a>
+            <a href="info.html">Informazioni</a>
+            <button id="darkModeToggle">Modalità Scura</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Form per pubblicare un nuovo post -->
+        <section id="postForm">
+            <h2>Condividi la tua strategia</h2>
+            <form id="newPostForm" enctype="multipart/form-data">
+                <label for="title">Titolo (opzionale):</label>
+                <input type="text" id="title" name="title" placeholder="Inserisci un titolo">
+
+                <label for="content">Testo:</label>
+                <textarea id="content" name="content" placeholder="Descrivi la tua strategia..." required></textarea>
+
+                <label for="image">Allega immagine (JPG/PNG/GIF, max 5MB):</label>
+                <input type="file" id="image" name="image" accept="image/*">
+
+                <label for="nickname">Soprannome (opzionale):</label>
+                <input type="text" id="nickname" name="nickname" placeholder="Anonimo">
+
+                <label for="tags">Tag (separati da virgola):</label>
+                <input type="text" id="tags" name="tags" placeholder="es. Instagram, TikTok">
+
+                <!-- Captcha semplice: domanda matematica -->
+                <label for="captcha">Quanto fa 2 + 3? (anti-spam):</label>
+                <input type="number" id="captcha" name="captcha" required>
+
+                <button type="submit">Pubblica</button>
+            </form>
+        </section>
+
+        <!-- Barra di ricerca e filtri -->
+        <section id="searchFilters">
+            <input type="text" id="searchInput" placeholder="Cerca per parola chiave">
+            <select id="tagFilter">
+                <option value="">Filtra per tag</option>
+                <!-- Opzioni tag verranno popolate dinamicamente -->
+            </select>
+        </section>
+
+        <!-- Feed dei post -->
+        <section id="postsFeed">
+            <!-- I post verranno caricati qui dinamicamente -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Bacheca Digitale. Contribuisci senza registrazione.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
