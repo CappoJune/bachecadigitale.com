@@ -7,7 +7,7 @@ let darkMode = false;
 // Funzione per caricare i post dalla API
 async function loadPosts() {
     try {
-        const response = await fetch('/api/posts');
+        const response = await fetch(`${API_BASE}/api/posts`);
         posts = await response.json();
         displayPosts(posts);
         populateTagFilter();
@@ -65,7 +65,7 @@ async function submitPost(event) {
         return;
     }
     try {
-        const response = await fetch('/api/posts', {
+        const response = await fetch(`${API_BASE}/api/posts`, {
             method: 'POST',
             body: formData
         });
@@ -84,7 +84,7 @@ async function submitPost(event) {
 // Funzione per mettere "Mi piace" a un post
 async function likePost(postId) {
     try {
-        await fetch(`/api/posts/${postId}/like`, { method: 'POST' });
+        await fetch(`${API_BASE}/api/posts/${postId}/like`, { method: 'POST' });
         loadPosts();
     } catch (error) {
         console.error('Errore nel like:', error);
@@ -94,7 +94,7 @@ async function likePost(postId) {
 // Funzione per segnalare un post
 async function reportPost(postId) {
     try {
-        await fetch(`/api/posts/${postId}/report`, { method: 'POST' });
+        await fetch(`${API_BASE}/api/posts/${postId}/report`, { method: 'POST' });
         alert('Post segnalato.');
     } catch (error) {
         console.error('Errore nella segnalazione:', error);
