@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    const API_BASE = "https://bacheca-api.onrender.com";
+    
     <header>
         <h1>Playbook</h1>
         <p>Le migliori strategie curate dalla comunità</p>
@@ -33,7 +33,9 @@
         // Funzione per caricare il playbook
         async function loadPlaybook() {
             try {
-                const response = await fetch('/api/playbook');
+                const API_BASE = 'https://bacheca-api.onrender.com';
+                const response = await fetch(`${API_BASE}/api/playbook`);
+
                 const strategies = await response.json();
                 const content = document.getElementById('playbookContent');
                 content.innerHTML = '';
