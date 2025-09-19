@@ -1,5 +1,5 @@
 // Questo file gestisce la logica frontend per la bacheca
-
+const API_BASE = "https://bacheca-api.onrender.com";
 // Variabili globali
 let posts = [];
 let darkMode = false;
